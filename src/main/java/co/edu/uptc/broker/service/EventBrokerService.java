@@ -42,7 +42,7 @@ public class EventBrokerService {
         Event event = new Event();
         event.setEventId(eventDTO.getEventId() != null ? eventDTO.getEventId() : UUID.randomUUID().toString());
         event.setEventType(eventDTO.getEventType());
-        event.setPayload(eventDTO.toString()); // Serializar el DTO completo
+        event.setPayload(eventDTO.toString()); 
         event.setSource(eventDTO.getSource());
         event.setTimestamp(eventDTO.getTimestamp() != null ? eventDTO.getTimestamp() : LocalDateTime.now());
         event.setProcessed(false);

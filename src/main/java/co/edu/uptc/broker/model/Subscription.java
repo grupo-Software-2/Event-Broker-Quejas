@@ -37,7 +37,6 @@ public class Subscription {
     @Column(nullable = false)
     private int failedDeliveries;
 
-    // Constructores
     public Subscription() {
         this.createdAt = LocalDateTime.now();
         this.active = true;
@@ -45,7 +44,7 @@ public class Subscription {
         this.failedDeliveries = 0;
     }
 
-    // Getters y Setters
+    
     public Long getId() {
         return id;
     }

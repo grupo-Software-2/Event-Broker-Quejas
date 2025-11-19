@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 public class AsyncRetryService {
     private static final Logger log = LoggerFactory.getLogger(AsyncRetryService.class);
     private static final int MAX_RETRIES = 3;
-    private static final long INITIAL_DELAY_MS = 1000; // 1 segundo
+    private static final long INITIAL_DELAY_MS = 1000; 
 
     private final RestTemplate restTemplate;
 
@@ -52,7 +52,7 @@ public class AsyncRetryService {
                     }
 
                     attempt++;
-                    delay *= 2; // Exponential backoff
+                    delay *= 2; 
 
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
@@ -100,7 +100,7 @@ public class AsyncRetryService {
     public CompletableFuture<Boolean> checkSubscriberHealth(String callbackUrl) {
         return CompletableFuture.supplyAsync(() -> {
             try {
-                // Asumimos que tiene un endpoint /health o similar
+                
                 String healthUrl = callbackUrl.replace("/events/", "/");
                 if (!healthUrl.endsWith("/health")) {
                     healthUrl = healthUrl.substring(0, healthUrl.lastIndexOf("/")) + "/health";

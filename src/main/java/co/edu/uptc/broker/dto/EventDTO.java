@@ -12,13 +12,12 @@ public class EventDTO {
     private LocalDateTime timestamp;
 
     private String source;
-    private Object data; // Datos específicos del evento
-
+    private Object data; 
     public EventDTO() {
         this.timestamp = LocalDateTime.now();
     }
 
-    // Getters y Setters
+    
     public String getEventId() {
         return eventId;
     }
