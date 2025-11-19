@@ -50,7 +50,7 @@ public class AsyncTaskMonitor {
         log.info("AsyncTaskMonitor initialized with {} executors", executors.size());
     }
 
-    @Scheduled(fixedRate = 300000) // 5 minutos
+    @Scheduled(fixedRate = 300000) 
     public void monitorThreadPools() {
         if (executors.isEmpty()) {
             log.warn("No executors available for monitoring");
@@ -70,7 +70,7 @@ public class AsyncTaskMonitor {
         log.info("=====================================");
     }
 
-    @Scheduled(fixedRate = 60000) // 1 minuto
+    @Scheduled(fixedRate = 60000) 
     public void checkPoolSaturation() {
         executors.forEach((name, executor) -> {
             try {
@@ -148,7 +148,7 @@ public class AsyncTaskMonitor {
         );
     }
 
-    // DTOs para métricas
+    
     public static class ExecutorMetrics {
         private final Map<String, PoolMetrics> pools;
 

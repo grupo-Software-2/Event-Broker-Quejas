@@ -17,7 +17,7 @@ public class SubscriptionDTO {
     public SubscriptionDTO() {
     }
 
-    // Getters y Setters
+   
     public String getSubscriptionId() {
         return subscriptionId;
     }
